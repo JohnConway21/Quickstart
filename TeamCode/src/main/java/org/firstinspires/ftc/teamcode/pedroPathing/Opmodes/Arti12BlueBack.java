@@ -22,12 +22,12 @@ public class Arti12BlueBack extends OpMode {
     // Pose definitions (same coordinates as original)
     private final Pose startPose = new Pose(57, 9, Math.toRadians(90));
     private final Pose scorePose1 = new Pose(72, 24, Math.toRadians(119.05));
-    private final Pose scorePose2 = new Pose(60, 84, Math.toRadians(135));
+    private final Pose scorePose2 = new Pose(60, 84, Math.toRadians(180));
     private final Pose pickup1Pose = new Pose(24, 36, Math.toRadians(180));
-    private final Pose pickup2Pose = new Pose(36, 60, Math.toRadians(180));
+    private final Pose pickup2Pose = new Pose(24, 60, Math.toRadians(180));
     private final Pose pickup3Pose = new Pose(24, 84, Math.toRadians(180));
     private final Pose parkPose = new Pose(33, 33, Math.toRadians(90));
-    private final Pose gatePose = new Pose(26, 75, Math.toRadians(180));
+    private final Pose gatePose = new Pose(17, 66, Math.toRadians(180));
 
     // Control poses for bezier curves
     private final Pose pickup2ControlPose = new Pose(52, 59);
@@ -113,6 +113,7 @@ public class Arti12BlueBack extends OpMode {
                                 scorePose2
                         )
                 )
+
                 .setLinearHeadingInterpolation(pickup3Pose.getHeading(), scorePose2.getHeading())
                 .build();
 
@@ -184,6 +185,7 @@ public class Arti12BlueBack extends OpMode {
                 break;
         }
     }
+
 
     public void setPathState(int pState) {
         pathState = pState;
