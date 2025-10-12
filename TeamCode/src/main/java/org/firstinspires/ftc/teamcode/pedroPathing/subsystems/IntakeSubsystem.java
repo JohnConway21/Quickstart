@@ -21,8 +21,6 @@ public class IntakeSubsystem {
         intakeMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         intakeMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
     }
-
-    /** Pulls the game element (ball) inward */
     public void intake() {
         intakeMotor.setPower(INTAKE_POWER);
         telemetry.addData("Intake", "Running (in)");
