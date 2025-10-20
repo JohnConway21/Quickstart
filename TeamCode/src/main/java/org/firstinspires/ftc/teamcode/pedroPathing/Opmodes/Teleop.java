@@ -1,8 +1,6 @@
 package org.firstinspires.ftc.teamcode.pedroPathing.opmodes;
 
-import com.bylazar.configurables.annotations.Configurable;
-import com.bylazar.telemetry.PanelsTelemetry;
-import com.bylazar.telemetry.TelemetryManager;
+
 import com.pedropathing.follower.Follower;
 import com.pedropathing.geometry.Pose;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
@@ -10,11 +8,10 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
-@Configurable
 @TeleOp(name = "TeleOp")
 public class Teleop extends OpMode {
     private Follower follower;
-    private TelemetryManager telemetryM;
+
     private boolean slowMode = false;
     private double slowModeMultiplier = 0.5;
 
@@ -25,7 +22,6 @@ public class Teleop extends OpMode {
         follower.setStartingPose(new Pose(0, 0, 0));
         follower.update();
 
-        telemetryM = PanelsTelemetry.INSTANCE.getTelemetry();
     }
 
     @Override
@@ -37,7 +33,6 @@ public class Teleop extends OpMode {
     @Override
     public void loop() {
         follower.update(); // Always update follower localization
-        telemetryM.update();
 
         // === DRIVER CONTROL ===
         double driveY = -gamepad1.left_stick_y;  // Forward/Backward
@@ -66,10 +61,5 @@ public class Teleop extends OpMode {
         } else {
             slowMode = false;
         }
-
-        // === TELEMETRY ===
-        telemetryM.debug("Pose", follower.getPose());
-        telemetryM.debug("Velocity", follower.getVelocity());
-        telemetryM.debug("Slow Mode", slowMode);
     }
 }
