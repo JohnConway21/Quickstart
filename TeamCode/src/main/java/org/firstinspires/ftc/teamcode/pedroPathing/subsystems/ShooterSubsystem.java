@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
-public class ShooterSubsystem {
+public class  ShooterSubsystem {
 
     private final DcMotor shooterMotor;   // flywheel
     private final DcMotor yawMotor;       // rotates shooter left/right
