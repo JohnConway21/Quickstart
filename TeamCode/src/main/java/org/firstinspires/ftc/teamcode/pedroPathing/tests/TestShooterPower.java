@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.pedroPathing.Opmodes;
+package org.firstinspires.ftc.teamcode.pedroPathing.tests;
 
 import com.qualcomm.hardware.limelightvision.LLResult;
 import com.qualcomm.hardware.limelightvision.Limelight3A;
@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 @Autonomous(name = "Limelight Multi-Pipeline Detection", group = "Vision")
-public class LimelightAprilTags extends LinearOpMode {
+public class TestShooterPower extends LinearOpMode {
 
     private Limelight3A limelight;
 
@@ -38,7 +38,7 @@ public class LimelightAprilTags extends LinearOpMode {
 
             // Check Pipeline 0
             limelight.pipelineSwitch(0);
-            sleep(50); // Give time for pipeline switch
+            sleep(50);
             LLResult result0 = limelight.getLatestResult();
 
             if (result0 != null && result0.isValid()) {
